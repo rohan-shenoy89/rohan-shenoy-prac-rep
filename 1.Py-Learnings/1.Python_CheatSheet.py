@@ -249,6 +249,7 @@ print("\n*****************\n")
 
 furniture = ['table', 'chair', 'rack', 'shelf']
 print(furniture.remove('rack'))
+print("\n*****************\n")
 
 #pop
 animals = ['cat', 'bat', 'rat', 'elephant']
@@ -258,3 +259,30 @@ print(animals)
 
 animals.pop(0)
 print(animals)
+print("\n*****************\n")
+
+#Sorting values with sort()
+numbers = [2, 5, 3.14, 1, -7]
+
+numbers.sort()
+print(numbers)
+
+furniture = ['table', 'chair', 'rack', 'shelf']
+furniture.sort()
+
+print(furniture)
+print("\n*****************\n")
+
+#reverse the list
+furniture.sort(reverse=True)
+print(furniture)
+
+letters = ['a', 'z', 'A', 'Z']
+letters.sort(key=str.lower)
+print(letters)
+
+#Using the sorted function
+
+furniture = ['table', 'chair', 'rack', 'shelf']
+result = sorted(furniture)
+print(result)
