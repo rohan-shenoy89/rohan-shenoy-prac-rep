@@ -157,5 +157,104 @@ def spam():
     global egg
     egg = 'spam'
 
-#egg = 'Rohan'
-spam
+
+egg = 'Rohan'
+spam()
+print(egg)
+
+#######################
+# Python Lists
+######################
+
+#Getting values with indexes
+furniture = ['table', 'chair', 'rack', 'shelf']
+
+print(furniture[0])
+print(furniture[1])
+print(furniture[-1])
+print(furniture[:-1])
+print("\n*****************\n")
+
+#Getting sublists with Slices
+furniture = ['table', 'chair', 'rack', 'shelf']
+
+print(furniture[0:4])
+print(furniture[1:4])
+print("\n*****************\n")
+
+# Slicing complete list to copy
+spam=['cat', 'bat', 'rat', 'elephant']
+
+spam2 = spam[:]
+print(spam2)
+
+spam.append('dog')
+print(spam)
+print("\n*****************\n")
+
+#Changing values with indexes
+
+furniture = ['table', 'chair', 'rack', 'shelf']
+
+furniture[0] = 'desk'
+
+print(furniture)
+
+furniture[2] = furniture[1]
+print(furniture)
+print("\n*****************\n")
+
+#Getting the index in a loop with enumerate()
+
+furniture = ['table', 'chair', 'rack', 'shelf']
+
+for index, item in enumerate(furniture):
+    print(f"The index at {index} is item {item}")
+print("\n*****************\n")
+
+#Loop in Multiple Lists with zip()
+
+furniture = ['table', 'chair', 'rack', 'shelf']
+price = [100, 50, 80, 40]
+
+for item, amount in zip(furniture,price):
+    print(f" The item {item} is of ${amount}")
+print("\n*****************\n")
+
+# The in and not in operators
+print('rack' in furniture)
+print('bed' in furniture)
+print("\n*****************\n")
+
+# The index Method
+
+furniture = ['table', 'chair', 'rack', 'shelf']
+print(furniture.index('chair'))
+print("\n*****************\n")
+
+# Adding Values
+# append
+furniture = ['table', 'chair', 'rack', 'shelf']
+
+furniture.append('bed')
+print(furniture)
+
+# insert
+furniture.insert(2,'sofa')
+print(furniture)
+print("\n*****************\n")
+
+#Removing Values
+#remove
+
+furniture = ['table', 'chair', 'rack', 'shelf']
+print(furniture.remove('rack'))
+
+#pop
+animals = ['cat', 'bat', 'rat', 'elephant']
+animals.pop()
+
+print(animals)
+
+animals.pop(0)
+print(animals)
