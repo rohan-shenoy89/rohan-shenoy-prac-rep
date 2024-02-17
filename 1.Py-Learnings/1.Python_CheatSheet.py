@@ -1,6 +1,6 @@
 #*******************************
 #   SUBJECT - Python Learning
-#   CORE SUBJECT - Loop Learning
+#   CORE SUBJECT - PYTHON CHEATSHEET
 #   DEVELOPER - Rohan Shenoy
 #*******************************
 
