@@ -276,13 +276,312 @@ print("\n*****************\n")
 #reverse the list
 furniture.sort(reverse=True)
 print(furniture)
+print("\n*****************\n")
 
 letters = ['a', 'z', 'A', 'Z']
 letters.sort(key=str.lower)
 print(letters)
+print("\n*****************\n")
 
 #Using the sorted function
 
 furniture = ['table', 'chair', 'rack', 'shelf']
 result = sorted(furniture)
 print(result)
+print("\n*****************\n")
+
+##################
+# Python Dictionaries
+##################
+
+my_cat = {
+    'size': 'fat',
+    'color': 'gray',
+    'disposition': 'loud'
+}
+
+#Set key, value
+
+my_cat['age_year'] = 2
+print(my_cat)
+print("\n*****************\n")
+
+#Get value using subscript operator []
+
+print(my_cat['size'])
+print("\n*****************\n")
+
+#values()
+
+pet = {'color': 'red', 'age': 42}
+
+for i in pet.values():
+    print(i)
+print("\n*****************\n")
+
+#keys()
+
+pet = {'color': 'red', 'age': 42}
+
+for i in pet.keys():
+    print(i)
+print("\n*****************\n")
+
+#item()
+
+pet = {'color': 'red', 'age': 42}
+for i in pet.items():
+    print(i)
+print("\n*****************\n")
+
+#get()
+
+wife = {'name': 'Rose', 'age': 33}
+
+print(f"My wife name is {wife.get('name')}")
+print(f"She is {wife.get('age')} old")
+print("\n*****************\n")
+
+#Adding items with setdefault()
+
+wife = {'name': 'Rose', 'age': 33}
+
+if 'has_hair' not in wife:
+    wife['has_hair'] = True
+
+# Using the setdefault makes the code more small and easy
+
+wife.setdefault('has_hair', True)
+print(wife)
+print("\n*****************\n")
+
+#Removing Items
+wife = {'name': 'Rose', 'age': 33, 'hair': 'brown'}
+wife.pop('age')
+
+print(wife)
+print("\n*****************\n")
+
+#popitem()
+wife.popitem()
+print(wife)
+print("\n*****************\n")
+
+#del()
+wife = {'name': 'Rose', 'age': 33, 'hair': 'brown'}
+
+del wife['age']
+
+print(wife)
+print("\n*****************\n")
+
+#clear()
+
+wife.clear()
+print(wife)
+print("\n*****************\n")
+
+#Checking keys in a Dictionary
+
+person = {'name': 'Rose', 'age': 33}
+
+result = 'name' in person.keys()
+print(result)
+print("\n*****************\n")
+
+#Checking values in a Dictionary
+
+person = {'name': 'Rose', 'age': 33}
+
+result = 'Rose' in person.values()
+print(result)
+print("\n*****************\n")
+
+#Merge two dictionaries
+
+dict_a = {'a': 1, 'b': 2}
+dict_b = {'c': 3, 'd': 4}
+
+result = {**dict_a, **dict_b}
+print(result)
+print("\n*****************\n")
+
+#################
+# Set
+#################
+
+#Initializing a set
+
+s = {} #option one to create a set
+s1 = set()
+print(type(s))
+print(type(s1))
+print("\n*****************\n")
+
+#Unordered collections of unique elements
+
+s = {1, 2, 3, 2, 3, 4}
+print(s)
+print("\n*****************\n")
+
+#set add() and update()
+
+#Using the add() method we can add a single element to the set.
+
+s = {4,5,6}
+s.add(7)
+
+print(s)
+print("\n*****************\n")
+
+#And with update(), multiple ones:
+
+s.update([8,9,10])
+print(s)
+print("\n*****************\n")
+
+#set remove() and discard()
+
+#Both methods will remove an element from the set, but remove() will raise a key error if the value doesn’t exist
+
+s.remove(10)
+print(s)
+print("\n*****************\n")
+
+#discard will not raise any execptions
+
+s.discard(10)
+print(s)
+print("\n*****************\n")
+
+#set union()
+
+s1 = {1, 2, 3}
+s2 = {3, 4, 5}
+
+result = s1.union(s2)
+print(result)
+print("\n*****************\n")
+
+#set intersection
+
+#intersection or & will return a set with only the elements that are common to all of them.
+
+s1 = {1, 2, 3}
+s2 = {2, 3, 4}
+s3 = {3, 4, 5}
+
+result = s1.intersection(s2,s3)           #Intersect can be done like this too - s1 & s2 & s3
+print(result)
+print("\n*****************\n")
+
+#set difference
+#difference or - will return only the elements that are unique to the first set (invoked set).
+
+s1 = {1, 2, 3}
+s2 = {2, 3, 4}
+
+result = s1.difference(s2)
+print(result)
+print("\n*****************\n")
+
+
+#set symetric_difference
+s1 = {1, 2, 3}
+s2 = {2, 3, 4}
+
+result = s1.symmetric_difference(s2)
+print(result)
+print("\n*****************\n")
+
+
+########################
+# Python Comprehensions
+########################
+
+# List comprehension vs basic coding
+
+#basic
+names = ['Charles', 'Susan', 'Patrick', 'George']
+
+new_list = list()
+
+for n in names:
+    new_list.append(n)
+print(new_list)
+
+#comprehension
+
+new_list = [n for n in names]
+print(new_list)
+print("\n*****************\n")
+
+#Adding conditionals
+
+# Basic
+
+new_list2 = list()
+
+for n in names:
+    if n.startswith('C'):
+        new_list2.append(n)
+        print(new_list2)
+print("\n*****************\n")
+
+# Comprehension
+
+new_list2 = [n for n in names if n.startswith('C')]
+print(new_list2)
+print("\n*****************\n")
+
+# To use an if-else statement in a List Comprehension:
+
+# basic
+nums = [1, 2, 3, 4, 5, 6]
+
+for n in nums:
+    if n % 2 == 0:
+        print(n*2)
+    else:
+        print(n)
+print("\n*****************\n")
+
+# Comprehensions
+
+new_list = [n*2 if n % 2 == 0 else n for n in nums]
+print(new_list)
+print("\n*****************\n")
+
+
+########################
+# Manipulating Strings
+########################
+
+# Escape characters
+
+print("Hello there!\nHow are you?\nI\'m doing fine.")
+print("\n*****************\n")
+
+#Raw strings
+
+#A raw string entirely ignores all escape characters and prints any backslash that appears in the string.
+
+print(r"Hello there!\nHow are you?\nI\'m doing fine.")
+print("\n*****************\n")
+
+#Indexing and Slicing strings
+
+# Indexing
+
+spam = "Hello World"
+
+print(spam[0])
+print(spam[1])
+print(spam[-1])
+print("\n*****************\n")
+
+# Slicing
+
+spam = "Hello World!"
+
+print(spam[0:5])
