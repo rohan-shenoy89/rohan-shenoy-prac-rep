@@ -5,7 +5,7 @@ from pyspark.sql import SparkSession
 spark = SparkSession.builder.appName("Sample-GCP-Read").getOrCreate()
 
 #Define file path
-filePath = "rs-gcp-learning-bucket/employee-details"
+filePath = "gs://rs-gcp-learning-bucket/employee-details"
 
 # Read the CSV file into a DataFrame
 df = spark.read.csv(filePath, header=True, inferSchema=True)
