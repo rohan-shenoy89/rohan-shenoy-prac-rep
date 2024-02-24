@@ -24,9 +24,9 @@ readRestSales.show(10)
 #Write data to cloud Storage
 readRestCust.write.format("parquet").mode("overwrite").save("gs://rs-gcp-learning-bucket/restaurant-details/write-restaurant-details-parquet/cust-det")
 
-readRestFood.write.format("parquet").mode("overwrite").save("gs://rs-gcp-learning-bucket/restaurant-details/write-restaurant-details-parquet/cust-det")
+readRestFood.write.format("parquet").mode("overwrite").save("gs://rs-gcp-learning-bucket/restaurant-details/write-restaurant-details-parquet/food-det")
 
-readRestSales.write.format("parquet").mode("overwrite").save("gs://rs-gcp-learning-bucket/restaurant-details/write-restaurant-details-parquet/cust-det")
+readRestSales.write.format("parquet").mode("overwrite").save("gs://rs-gcp-learning-bucket/restaurant-details/write-restaurant-details-parquet/sales-det")
 
 
 # Stop the SparkSession
