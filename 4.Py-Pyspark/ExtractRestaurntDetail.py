@@ -22,7 +22,7 @@ readRestFood.show(10)
 readRestSales.show(10)
 
 #Write data to cloud Storage
-readRestCust.write.format("parquet").mode("overwrite").save("gs://rrs-gcp-learning-bucket/restaurant-details/write-restaurant-details-parquet/cust-det")
+readRestCust.write.format("parquet").mode("overwrite").save("gs://rs-gcp-learning-bucket/restaurant-details/write-restaurant-details-parquet/cust-det")
 
 readRestFood.write.format("parquet").mode("overwrite").save("gs://rs-gcp-learning-bucket/restaurant-details/write-restaurant-details-parquet/cust-det")
 
