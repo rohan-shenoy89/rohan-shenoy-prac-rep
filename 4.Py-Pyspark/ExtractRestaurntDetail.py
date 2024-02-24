@@ -19,7 +19,7 @@ readRestSales = spark.read.format("csv").option("header","True").option("inferSc
 #Check sample Data
 readRestCust.show(10)
 readRestFood.show(10)
-RestSales.show(10)
+readRestSales.show(10)
 
 #Write data to cloud Storage
 readRestCust.write.format("parquet").mode("overwrite").save("gs://rrs-gcp-learning-bucket/restaurant-details/write-restaurant-details-parquet/cust-det")
