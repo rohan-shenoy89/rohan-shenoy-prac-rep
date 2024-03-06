@@ -39,6 +39,7 @@ class AccDetails:
         print("----------------------------------------------------------")
         print(f"BALANCE - {self.Balance}")
 
+
 p1 = AccDetails(123456789,"Rahul Kumar",10000)
 print(p1.bankName())
 print("-------------------")
@@ -49,4 +50,10 @@ print("-------------------\n")
 p1.debitAmt(100)
 print("-------------------\n")
 p1.creditAmt(1250)
+print("-------------------\n")
 
+
+p2 = AccDetails(12345,"Raman R", 12000)
+print(p2.bankName())
+print("\n-------------------")
+print(p2.account_holder() , '-' , p2.acc_details(),end='\n')
