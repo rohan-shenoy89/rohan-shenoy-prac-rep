@@ -8,3 +8,4 @@
 --> CLOUD STORAGE
 
 **Create Bucket** - gsutil mb gs://rs-gcp-learning-temp
+
