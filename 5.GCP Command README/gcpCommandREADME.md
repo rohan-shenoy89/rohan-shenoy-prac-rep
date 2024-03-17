@@ -66,5 +66,36 @@
 
 **Run the command on Query tab for table info** - select * from gcpBqLearning.__TABLES_SUMMARY__
 
-**Create parttioned data via shell** - bq mk --table --schema DEPARTMENT_ID:STRING, DEPARTMENT_NAME:STRING --time_partitioning_field OrderDate gcpBqLearning:special_depart
+**Create partitioned data via shell** - bq mk --table --schema DEPARTMENT_ID:STRING, DEPARTMENT_NAME:STRING --time_partitioning_field OrderDate gcpBqLearning:special_depart
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> Cloud Composer
+
+**update pypi package** - gcloud composer environments update rs-gcp-learning-composer2 \
+--update-pypi-packages-from-file /home/cloud_user/requirements.txt \
+--location east-south-1
+--async
+
+**Define Airflow variables** - gcloud composer environments run rs-gcp-learning-composer2 \
+--location east-south-1
+--set <variable_name> rs-gcp-learning
+
+**set locations for GCS operations** - gcloud composer environments run rs-gcp-learning-composer2 \
+--location east-south-1 variables -- \
+--set <source_name> <bucket_name>
+
+gcloud composer environments run rs-gcp-learning-composer2 \
+--location east-south-1 variables -- \
+--set <destination_name> <bucket_name>
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> Cloud SQL
+
+**Get details about SQL** - gcloud sql instances patch --help
+
+**Stop instance** - gcloud sql instances patch rs-gcp-learning-sql --activation-policy NEVER
+
+**Start instance** - gcloud sql instances patch rs-gcp-learning-sql --activation-policy ALWAYS
+
+**Restart the instance** - gcloud sql instances restart rs-gcp-learning-sql
