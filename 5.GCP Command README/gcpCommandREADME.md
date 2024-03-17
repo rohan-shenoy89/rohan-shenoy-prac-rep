@@ -2,8 +2,42 @@
 
 **Create Cluster** - gcloud dataproc clusters create rs-gcp-learning-cluster --region asia-south1 --zone asia-south1-a --single-node --master-machine-type n2-standard-4 --master-boot-disk-size 500 --image-version 2.1-debian11 --project gcplearning-414410
 
+**Create Preemptible Cluster** - gcloud dataproc clusters create rs-gcp-learning-prem-cluster \
+--num-secondary-workers 1 --region asia-south1 --zone asia-south1-a \
+--master-machine-type n2-standard-4 --master-boot-disk-size 30 \
+--num-workers 2 --worker-machine-type n2-standard-2 \
+--worker-boot-disk-size 30
+
+**Initilization action to add software** - gcloud dataproc clusters create <cluster name> --initialization-actions gs://$MY_BUCKET/hbase/hbase.sh --num-master 3 --num-workers 2
+
 **Run job via Shell** - gcloud dataproc jobs submit pyspark --cluster rs-gcp-learning-cluster gs://rs-gcp-learning-spark-repo/ExtractRestaurntDetail.py --region asia-south1 --project gcplearning-414410
 
+**Create a cluster with primary-worker shuffle** - gcloud dataproc clusters create cluster-name \
+    --region=region \
+    --properties=dataproc:efm.spark.shuffle=primary-worker \
+    --properties=dataproc:efm.mapreduce.shuffle=hcfs \
+    --worker-machine-type=n1-highmem-8 \
+    --num-workers=25 \
+    --num-worker-local-ssds=2 \
+    --secondary-worker-type=preemptible \
+    --secondary-worker-boot-disk-size=500GB \
+    --num-secondary-workers=25
+
+**Disable autoscaling** - gcloud dataproc clusters update \
+    --cluster=cluster-name \
+    --region=region \
+    --disable-autoscaling
+
+**Scale the primary group** - gcloud dataproc clusters update \
+    --cluster=cluster-name \
+    --region=region \
+    --num-workers=num-primary-workers \
+    --graceful-decommission-timeout=graceful-decommission-timeout
+
+**Re-enable autoscaling** - gcloud dataproc clusters update \
+    --cluster=cluster-name \
+    --region=region \
+    --autoscaling-policy=autoscaling-policy
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --> CLOUD STORAGE
 
@@ -31,4 +65,6 @@
 **Update the dataset persmissions** - bq update --source <json file> <dataset_name>
 
 **Run the command on Query tab for table info** - select * from gcpBqLearning.__TABLES_SUMMARY__
+
+**Create parttioned data via shell** - bq mk --table --schema DEPARTMENT_ID:STRING, DEPARTMENT_NAME:STRING --time_partitioning_field OrderDate gcpBqLearning:special_depart
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
