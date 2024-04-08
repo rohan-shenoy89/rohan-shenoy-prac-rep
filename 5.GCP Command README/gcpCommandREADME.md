@@ -99,3 +99,9 @@ gcloud composer environments run rs-gcp-learning-composer2 \
 **Start instance** - gcloud sql instances patch rs-gcp-learning-sql --activation-policy ALWAYS
 
 **Restart the instance** - gcloud sql instances restart rs-gcp-learning-sql
+
+**Delete Instance** - gcloud sql instances delete rs-gcp-learning-sql
+
+**Connect to SQL - root user** - gcloud sql connect rs-gcp-learning-sql1 --user=root
+
+**Connect to SQL - root developer** - gcloud sql connect rs-gcp-learning-sql1 --user=developer
