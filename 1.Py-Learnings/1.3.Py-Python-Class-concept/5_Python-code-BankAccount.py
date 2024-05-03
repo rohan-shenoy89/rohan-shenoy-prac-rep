@@ -16,6 +16,9 @@ class BankAccount():
         else:
             return "Insufficient Balance"
 
-user1 = BankAccount("Rohan")
-print(user1.credit(300))
-print(user1.debit(400))
+#main
+
+if __name__ == "__main__":
+    user1 = BankAccount("Rohan")
+    print(user1.credit(300))
+    print(user1.debit(100))
