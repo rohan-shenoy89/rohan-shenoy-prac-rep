@@ -58,7 +58,7 @@
 
 **Get information of Dataset** - bq show publicdata:samples.shakespeare
 
-**Run SQL** - bq query "SELECT count(distinct corpus) FROM `bigquery-public-data.samples.shakespeare` LIMIT 1000"
+**Run SQL** - bq query "SELECT * FROM bigquery_public_data.google_trends.top_terms LIMIT 1000"
 
 **Show detais about Dataset** - bq show --format=prettyjson gcpBqLearning
 
@@ -66,7 +66,7 @@
 
 **Run the command on Query tab for table info** - select * from gcpBqLearning.__TABLES_SUMMARY__
 
-**Create partitioned data via shell** - bq mk --table --schema DEPARTMENT_ID:STRING, DEPARTMENT_NAME:STRING --time_partitioning_field OrderDate gcpBqLearning:special_depart
+**Create partitioned data via shell** - bq mk --table --schema OrderId:STRING,OrderDate:DATE,Quantity:INTEGER --time_partitioning_field OrderDate gcplearning-414410.restaurant_dataset.order_data
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 --> Cloud Composer
