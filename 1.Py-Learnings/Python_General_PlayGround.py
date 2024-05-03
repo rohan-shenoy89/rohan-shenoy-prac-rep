@@ -1,3 +1,6 @@
-file = open("sample.txt", "r")
-data = file.read(0)
-print(data)
+import os
+
+if os.path.exists("demofile.txt"):
+  os.remove("demofile.txt")
+else:
+  print("The file does not exist")
