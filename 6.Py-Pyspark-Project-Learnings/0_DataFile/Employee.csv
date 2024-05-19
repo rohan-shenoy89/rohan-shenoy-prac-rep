@@ -1,0 +1,7 @@
+emp_id,emp_nm,emp_loc,emp_sal,emp_dept
+1001,Rohan,Mumbai,20000,IT
+1002,Mayuri,Bangalore,23000,IT
+1003,Ruturaj,Sangli,10000,EC
+1004,,,2000,EC
+1005,,,1000,EC
+1006,Rahul,,12000,IT
